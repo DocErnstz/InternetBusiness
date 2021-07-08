@@ -1,3 +1,126 @@
-.hello{
-   background: rebeccapurple;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+@import "navbar.css";
+@import "inicio.css";
+
+body{
+   font-family: 'Noto Sans JP', sans-serif;
+   line-height: 1.6;
+   color: white;
 }
+
+.container{
+   background-color: grey;
+   margin: 0 auto;
+   max-width: 1110px;
+   padding: 0px 40px;
+   height: 100px;   
+}
+
+.flex{
+ display: flex;
+ justify-content: space-between;
+
+}
+
+  
+h1{
+   
+   line-height: 1.2;
+   margin: auto 0;
+   font-size: 40px;
+   font-weight: 300;
+}
+
+
+*{
+   
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+   nav ul{
+      position: absolute;
+      display: flex;
+      bottom: 0;
+      left: 0;
+      background-color: grey;
+      height: 100%;
+      width: 100%;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      transition: all 1s ease-in-out;
+      clip-path: circle(100px at 90% 0%);
+      -webkit-clip-path: circle(100px at 90% 0%);
+   }
+   ul.open
+   {
+      clip-path: circle(100px at 90% 0%);
+      -webkit-clip-path: circle(500px at 90% 0%);
+   }
+   
+
+   .options{
+      position: relative;
+      margin-bottom: 200px;
+      margin-left: 300px;
+      text-align: center;
+   }
+   li{
+      display: none;
+      margin: 20px 0px;
+   }
+
+   .fade:first-child, .fade:nth-child(2), .fade:nth-child(3)
+   {
+      display: block;
+      margin: 30px 0px;
+   }
+   .fade:first-child{
+      animation: showup 1s ease-in-out;
+   }
+   .fade:nth-child(2){
+      animation: showup 1.5s ease-in-out;
+      
+   }
+   .fade:nth-child(3){
+      animation: showup 2s ease-in-out;
+      
+   }
+   .fade::after{
+      background-color: red;
+      width: 10px;
+      height: 10px;
+   }
+
+   
+   li a{
+      background: none;
+      font-size: 2rem;
+   }
+   #hamburguer
+   {
+      cursor: pointer;
+      z-index: 10;
+   }
+   #hamburguer > div
+   {
+      height: 3px;
+      width: 30px;
+      background: white;
+      margin: 5px 0;
+   }
+   @keyframes showup {
+      from {
+         opacity: 0;
+         transform: translateX(100px)
+      }
+      to {
+         opacity: 1;
+         transform: translateX(0px);
+      }
+   }
+ }
