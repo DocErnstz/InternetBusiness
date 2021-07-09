@@ -27,49 +27,66 @@ const slider = document.querySelector(".slider");
 const images = document.querySelectorAll("img");
 
 
-let counter = 1;
-const size = images[0].clientWidth;
 
-right_button.addEventListener("click", () => {
-  slider.style.transition = "transform 0.4s ease-in-out";
-  console.log(-size);
-  counter++;
-  slider.style.transform = "translateX(" + (-size * counter) + "px)";
+
+const slides = document.querySelectorAll('.slide');
+const next = document.querySelector('#next');
+const prev = document.querySelector('#prev');
+const auto = false; // Auto scroll
+const intervalTime = 5000;
+let slideInterval;
+
+const nextSlide = () => {
+  // Get current class
+  const current = document.querySelector('.current');
+  // Remove current class
+  current.classList.remove('current');
+  // Check for next slide
+  if (current.nextElementSibling) {
+    // Add current to next sibling
+    current.nextElementSibling.classList.add('current');
+  } else {
+    // Add current to start
+    slides[0].classList.add('current');
+  }
+  setTimeout(() => current.classList.remove('current'));
+};
+
+const prevSlide = () => {
+  // Get current class
+  const current = document.querySelector('.current');
+  // Remove current class
+  current.classList.remove('current');
+  // Check for prev slide
+  if (current.previousElementSibling) {
+    // Add current to prev sibling
+    current.previousElementSibling.classList.add('current');
+  } else {
+    // Add current to last
+    slides[slides.length - 1].classList.add('current');
+  }
+  setTimeout(() => current.classList.remove('current'));
+};
+
+// Button events
+next.addEventListener('click', e => {
+  nextSlide();
+  if (auto) {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, intervalTime);
+  }
 });
 
-left_button.addEventListener("click", () => {
-  slider.style.transition = "transform 0.4s ease-in-out";
-  console.log(counter);
-  counter--;
-  
-  slider.style.transform = "translateX(" + (-size * counter) + "px)";
+prev.addEventListener('click', e => {
+  prevSlide();
+  if (auto) {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, intervalTime);
+  }
 });
 
-slider.addEventListener("transitionend", () => {
-  
-  if(images[counter].id == "lastClone") {
-    
-    slider.style.transition = "none";
-    counter = images.length - 2;
-    slider.style.transform = "translateX(" + (-size * counter) + "px)";
-  }
-  if(images[counter].id == "firstClone") {
-    
-    slider.style.transition = "none";
-    counter = 1;
-    slider.style.transform = "translateX(" + (-size * counter) + "px)";
-  }
-     
-
-})
-
-setInterval(() => {
-     slider.style.transition = "transform 0.4s ease-in-out";
-  console.log("Aasd");
-  
-  counter++;
-  slider.style.transform = "translateX(" + (-size * counter) + "px)";
-    
-  }, (100000));
-
-
+// Auto slide
+if (auto) {
+  // Run next slide at interval time
+  slideInterval = setInterval(nextSlide, intervalTime);
+}
