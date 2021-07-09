@@ -1,0 +1,68 @@
+
+
+
+
+
+
+.quienes_somos{
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.quienes_somos h1{
+    margin-bottom: 10px;
+}
+
+.mantente_en_contacto {
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.form_ld{
+height: 633px;
+}
+
+.form{
+   display: inline-block;
+   padding: 50px;
+     background: rgb(23, 22, 22);
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+     border-radius: 10px;
+    color: black;
+}
+
+.form .btn {
+    font-size: 1.5rem;
+    color: #fff;
+}
+.form input:focus{
+    outline: none;
+
+}
+.form input{
+    border-radius: 5px;
+    border: 1px solid white;
+    padding: 15px 10px;
+    margin: 20px 0px;
+    background: rgb(23, 22, 22);
+    width: 400px;
+}
+
+.btn{
+    width: 50%;
+    padding: 10px 0px;
+    margin: 5px 0px;
+    background: grey;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+}
+
+.data_row_1{
+    margin-right: 30px;
+}
+
