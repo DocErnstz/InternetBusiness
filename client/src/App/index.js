@@ -65,7 +65,7 @@ slider.addEventListener("transitionend", () => {
 
 setInterval(() => {
      slider.style.transition = "transform 0.4s ease-in-out";
-  console.log("AS");
+  console.log("Ad");
   
   counter++;
   slider.style.transform = "translateX(" + (-size * counter) + "px)";
