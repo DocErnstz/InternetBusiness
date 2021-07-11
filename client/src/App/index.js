@@ -97,8 +97,8 @@ if (auto) {
 function sendMail(params)
 {
   var temParams = {
-    from_name: params.from_name,
-    to_name: params.to_name,
+    from_name: params.email,
+    to_name: params.name,
     message: params.message
   }
   emailjs.send("service_x04vuvd", "template_d9zpllb", temParams, "user_Hy82PGE5Z3eRCYvWWHAEi")
@@ -118,7 +118,7 @@ messageForm.addEventListener("submit", (e) => {
   const message = new DataMessage(name.value, email.value, msg.value);
   ui.addMessages(message);
   ui.getMessages();
-  sendMail(data);
+  sendMail(message);
   
   
 })
