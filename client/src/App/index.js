@@ -2,10 +2,10 @@
 require("./css/index.css");
 
 import "regenerator-runtime/runtime";
-
-
-const descarga = require("./css/img/descarga.jpg");
-const Cloud = require("./css/img/Cloud.jpg");
+import { DataMessage } from "./js/message.js";
+import { UI } from "./js/ui.js";
+const ui = new UI();
+ui.getMessages();
 
 const hamburger = document.getElementById("hamburguer");
 const navLinks = document.querySelector("ul");
@@ -115,25 +115,22 @@ const msg = document.getElementById("Message");
 
 messageForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  var data = {
-    from_email: email.value,
-    to_name: name.value,
-    message: msg.value
-  }
+  const message = new DataMessage(name.value, email.value, msg.value);
+  ui.addMessages(message);
+  ui.getMessages();
   sendMail(data);
-  fetch("http://localhost:3001/messages/message", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    name: data.to_name,
-    email: data.from_email,
-    message: data.message 
-  })
-}).then((e) => console.log(e)).catch(error => console.log(error))
- 
+  
   
 })
+
+
+const button_side = document.querySelector(".button_side");
+const side_board = document.querySelector(".board")
+
+button_side.addEventListener("click", () => {
+  side_board.classList.toggle("slider_side");
+  button_side.classList.toggle("button_fade");
+})
+
 
 
