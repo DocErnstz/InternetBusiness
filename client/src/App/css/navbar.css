@@ -8,6 +8,17 @@
 
 
 
+.nav_title{
+   display: flex;
+}
+.nav_title > h1{
+   transition: 0.5s ease-in-out;
+}
+.nav_title > h1:hover{
+   transform: translateY(-5px);
+   color:rgb(255, 83, 83);
+}
+
 
 nav {
     display: flex;

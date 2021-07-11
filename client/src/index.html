@@ -6,12 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="App/css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="navbar">
         <div class="container flex">
-            <h1>Layoust</h1>
+          <div class="nav_title">
+            <h1>I</h1>
+            <h1>n</h1>
+            <h1>t</h1>
+            <h1>e</h1>
+            <h1>r</h1>
+
+          </div>
+          
             
             <nav>
                 <div id="hamburguer">
@@ -113,7 +124,7 @@
         Dicta harum deleniti laudantium fugit qui hic dolore corporis recusandae dolorem tempore facere natus ipsam voluptates, laborum quidem repellendus dolor earum dolores ea quo molestias pariatur quod possimus vitae? Animi?</p>
       </div>
 
-      <form class="form_ld">
+      <form class="form_ld" action="">
      
         <div class="form">
           
@@ -122,35 +133,43 @@
        <div class="data_row_1"> 
         <div>
        
-       <input class="form-control" type="text" name="" placeholder="Email">
+       <input class="form-control" type="text" id="email" placeholder="Email">
        </div>
        <div>
       
-       <input class="form-control" type="text" name="" placeholder="Password">
+       <input class="form-control" type="text" id="Name" placeholder="Your Name">
        </div>
        <div>
       
-       <input class="form-control" type="text" name="" placeholder="Username">
+       <input class="form-control" type="text" id="Message" placeholder="Message">
        </div>
        
       
        </div>
         
         </div>
-        <input class="btn" type="submit" name="" value="Send">
+        <input class="btn" id="formSubmit" type="submit" value="Send">
         </div>
         
       </form>
     </section>
-    <header>
+    <footer>
+     
       <div class="icons">
-        <div></div>
-      <div></div>
-      <div></div>
+        <div><i class="fa fa-twitter fa-2x"></i></div>
+      <div><i class="fa fa-facebook fa-2x"></i></div>
+      <div><i class="fa fa-instagram fa-2x"></i></div>
 
       </div>
+
       
-    </header>
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript">
+(function() {
+emailjs.init("user_Hy82PGE5Z3eRCYvWWHAEi");
+})();
+</script>
     <script src="App/index.js"></script>
 </body>
 </html>

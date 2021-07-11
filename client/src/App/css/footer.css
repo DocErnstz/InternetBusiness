@@ -1,19 +1,23 @@
-header{
+footer{
     background: rgb(59, 59, 59);
     height: 200px;
 }
 
-header .icons > div{
+footer .icons > div{
     border: 5px solid white;
     border-radius: 10px;
     width: 50px;
     height: 50px;
     cursor: pointer;
     transition: 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header .icons > div:hover{
+footer .icons > div:hover{
     transform: rotateZ(180deg);
+    color: black;
 }
 
 .icons{
@@ -23,3 +27,4 @@ header .icons > div:hover{
     align-items: center;
     height: 100%;
 }
+

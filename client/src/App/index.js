@@ -1,6 +1,8 @@
 
 require("./css/index.css");
 
+import "regenerator-runtime/runtime";
+
 
 const descarga = require("./css/img/descarga.jpg");
 const Cloud = require("./css/img/Cloud.jpg");
@@ -90,3 +92,35 @@ if (auto) {
   // Run next slide at interval time
   slideInterval = setInterval(nextSlide, intervalTime);
 }
+
+
+function sendMail(params)
+{
+  var temParams = {
+    from_name: params.from_name,
+    to_name: params.to_name,
+    message: params.message
+  }
+  emailjs.send("service_x04vuvd", "template_d9zpllb", temParams, "user_Hy82PGE5Z3eRCYvWWHAEi")
+  .then(function(res){
+    console.log("sucees");
+  })
+}
+
+const messageForm = document.querySelector("form");
+const form_btn = document.getElementById("formSubmit");
+const email = document.getElementById("email");
+const name = document.getElementById("Name");
+const msg = document.getElementById("Message");
+
+messageForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  var data = {
+    from_email: email.value,
+    to_name: name.value,
+    message: msg.value
+  }
+  //sendMail(data);
+  fetch("https://localhost:3001/messages/message").then(() => console.log("s"))
+  
+})
