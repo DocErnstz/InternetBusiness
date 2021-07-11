@@ -120,7 +120,20 @@ messageForm.addEventListener("submit", (e) => {
     to_name: name.value,
     message: msg.value
   }
-  //sendMail(data);
-  fetch("https://localhost:3001/messages/message").then(() => console.log("s"))
+  sendMail(data);
+  fetch("http://localhost:3001/messages/message", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    name: data.to_name,
+    email: data.from_email,
+    message: data.message 
+  })
+}).then((e) => console.log(e)).catch(error => console.log(error))
+ 
   
 })
+
+
