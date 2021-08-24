@@ -7,6 +7,7 @@ export class UI {
 
       data.forEach((item) => {
         const element = document.createElement("div");
+
         element.innerHTML = `
     <div class="msg">
     <div class="profile_icon"><i class="fa fa-user"></i></div>
@@ -16,6 +17,7 @@ export class UI {
     </div>
     </div>
         `;
+
         board.appendChild(element);
       });
     });
@@ -34,7 +36,6 @@ export class UI {
     })
       .then(async (response) => {
         const message = await response.json();
-        console.log(message);
       })
       .catch((error) => console.log(error));
   }
