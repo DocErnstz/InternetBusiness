@@ -1,175 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 
-@import "navbar.css";
+@import "messageBar.css";
 @import "slider.css";
-@import "form.css";
-@import "footer.css";
 
-
-body{
-   font-family: 'Noto Sans JP', sans-serif;
-   line-height: 1.6;
-   color: white;
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.6;
+  color: white;
 }
 
-
-
-.container{
-   background-color: grey;
-   margin: 0 auto;
-   max-width: 1110px;
-   padding: 0px 40px;
-   height: 100px;   
-}
-
-.flex{
- display: flex;
- justify-content: space-between;
-
-}
-
-  
-h1{
-   
-   line-height: 1.2;
-   margin: auto 0;
-   font-size: 40px;
-   font-weight: 300;
-}
-
-
-*{
-   
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-}
-
-
-.messages_list{
-   position: fixed;
-   height: 100%;
-   width: 100px;
-   z-index: 100;
-   right: 0px;
-  
-   transform: translateX(100px);
-   
-}
-.messages_list > div{
-   width: 250px;
-   height: 100%;
-   background-color: grey;
-}
-
-.button_side{
-   position: fixed;
-   right: 0px;
-   top: 50%;
-   height: 30px;
-   width: 60px;
-   background-color: transparent;
-   border-left:30px solid transparent;
-   border-bottom: 30px solid grey;
-  
-   border-top: 30px solid grey;
-   transition: 0.2s ease-in-out;
-   z-index: 50;
-   
-}
-
-.button_side:hover{
-  width: 150px;
-
- 
-}
-.board{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   overflow-y: auto;
-   transition: 0.2s ease-in-out;
-   animation: slide_board_right 0.4s ease-in-out;
-}
-.board .msg{
-   margin-top: 20px;
-   width: 200px;
-   display: flex;
-   
-}
-.msg .profile_icon{
-   border-radius: 10px;
-   height: 50px;
-   padding: 10px;
-   border: 3px solid white;
-   display: flex;
-   align-items: center;
-   margin-right: 10px;
-}
-
-.msg .profile_data .name{
-   border-bottom: 1px solid white;
-}
-.msg .message_text{
-
-   word-wrap: break-word;
-   width: 150px;
-
-}
-.board.slider_side{
-   animation: slide_board_left 0.4s ease-in-out;
-   animation-fill-mode: forwards;
-   animation-delay: 0.5s;
-}
-
-.button_fade{
-   animation: button_fade 0.4s ease-in-out;
-   animation-fill-mode: forwards;
-}
-
-@keyframes slide_board_left {
-   0%{
-      transform: translateX(0px);
-   }
-   100%{
-      transform: translateX(-250px);
-   }
-}
-@keyframes slide_board_right {
-   0%{
-      transform: translateX(-250px);
-   }
-   100%{
-      transform: translateX(0px);
-   }
-}
-@keyframes button_fade {
-   0%{
-      opacity: 1;
-
-   }
-   25%{
-      opacity: 0;
-   }
-   100%{
-      opacity: 1;
-      width: 300px;
-     
-   }
-   
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
-   width: 5px;
- }
+  width: 5px;
+}
 
- ::-webkit-scrollbar-track {
-   background: transparent !important;
- }
- 
- ::-webkit-scrollbar-thumb {
-   background: #bbbbbb;
-   border-radius: 10px;
- }
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
 
+::-webkit-scrollbar-thumb {
+  background: #bbbbbb;
+  border-radius: 10px;
+}

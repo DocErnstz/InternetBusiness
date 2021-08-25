@@ -1,0 +1,19 @@
+.container {
+  background-color: grey;
+  margin: 0 auto;
+  max-width: 1110px;
+  padding: 0px 40px;
+  height: 100px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  line-height: 1.2;
+  margin: auto 0;
+  font-size: 40px;
+  font-weight: 300;
+}

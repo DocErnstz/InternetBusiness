@@ -1,0 +1,93 @@
+@use "var";
+@mixin splitup() {
+  display: flex;
+  justify-content: space-between;
+}
+.nav {
+  background-color: grey;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  &_container {
+    margin: 0px auto;
+    @include splitup();
+    width: 90%;
+    &_title {
+      width: 200px;
+      padding: 10px auto;
+      @include splitup();
+      & + nav > ul {
+        list-style-type: none;
+        margin: auto 0px;
+        .options {
+          width: 300px;
+          @include splitup();
+          & > li > a {
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+    }
+
+    &_title > h1 {
+      position: relative;
+      flex: 1 0 auto;
+      text-align: center;
+      transition: color 0.4s ease-in-out;
+
+      & .container {
+        position: absolute;
+        top: 45%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10px;
+        & > div {
+          display: none;
+          position: relative;
+          width: 0px;
+          border: 4px solid var.$myRed;
+          box-sizing: border-box;
+          border-radius: 9999px;
+          transition: all 0.1s ease-in-out;
+        }
+        & > div:after {
+          content: "";
+          display: block;
+          padding-bottom: 100%;
+        }
+      }
+      &:hover .container > div {
+        display: block;
+        animation: hoverLetter 0.4s ease-in-out;
+        animation-fill-mode: forwards;
+      }
+      &:hover {
+        color: var.$myRed;
+      }
+      @keyframes hoverLetter {
+        0% {
+          width: 0px;
+          opacity: 0;
+        }
+        25% {
+          width: 10px;
+          opacity: 1;
+        }
+        100% {
+          width: 40px;
+          opacity: 0;
+        }
+      }
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+}

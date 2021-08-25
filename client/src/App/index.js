@@ -1,6 +1,5 @@
 require("./scss/index.scss");
 require("./css/index.css");
-
 import "regenerator-runtime/runtime";
 import { DataMessage } from "./js/message.js";
 import { UI } from "./js/ui.js";
