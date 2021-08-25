@@ -7,7 +7,7 @@ const ui = new UI();
 ui.getMessages();
 
 const hamburger = document.getElementById("hamburguer");
-const navLinks = document.querySelector("ul");
+const navLinks = document.querySelector("nav > div:nth-child(2)");
 const links = document.querySelectorAll("li");
 const lines = document.querySelectorAll(".line");
 
