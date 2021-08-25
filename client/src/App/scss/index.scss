@@ -1,6 +1,8 @@
 @use "var";
 @use "navbar";
 @use "form";
+@use "icons";
+@use "Sbackground";
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 
@@ -8,7 +10,7 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   line-height: 1.6;
   color: white;
-  background: red;
+  background: var.$myRed;
 }
 
 * {

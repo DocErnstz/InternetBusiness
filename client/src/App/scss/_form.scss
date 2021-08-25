@@ -1,6 +1,7 @@
 @use "var";
 #form {
   display: flex;
+  position: relative;
   .form {
     background-color: var.$formRed;
     width: 100%;
@@ -20,7 +21,7 @@
       }
       p {
         font-size: clamp(20px, 2vw, 2rem);
-        color: rgb(59, 51, 51);
+        color: rgb(97, 104, 104);
       }
     }
     &_WWA {
@@ -32,9 +33,49 @@
     form {
       margin: 200px 0;
       .form_ld {
-        background-color: blue;
         width: 300px;
         margin: 0 auto;
+        .data {
+          input {
+            width: 100%;
+            border-radius: 50px;
+            border: 4px solid transparent;
+            padding: 10px;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 20px;
+            margin: 10px 0;
+            position: relative;
+          }
+          input:focus {
+            outline: none;
+          }
+          input:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            margin: 4px;
+            border-radius: 50px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(to right, red, orange);
+          }
+        }
+        .btn {
+          position: relative;
+          margin-top: 50px;
+          border: 4px solid transparent;
+          border-radius: 50px;
+          font-family: "Noto Sans JP", sans-serif;
+          font-size: 20px;
+          color: gray;
+          padding: 10px;
+          width: 100%;
+          cursor: pointer;
+        }
       }
     }
   }

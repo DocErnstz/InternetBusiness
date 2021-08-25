@@ -1,0 +1,20 @@
+@use "var";
+footer {
+  background-color: var.$myRed;
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  .icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+    & > div {
+      transition: all 0.5s ease-in-out;
+    }
+    & > div:hover {
+      color: var.$otherRed;
+      transform: rotateY(360deg);
+    }
+  }
+}
