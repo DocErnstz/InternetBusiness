@@ -106,7 +106,10 @@
       width: 200px;
       padding: 10px auto;
       @include splitup();
-      & + nav > div {
+    }
+
+    nav {
+      div {
         list-style-type: none;
         height: 100%;
         .options {
@@ -145,9 +148,6 @@
           }
         }
       }
-    }
-
-    nav {
       display: flex;
       align-items: center;
       justify-content: flex-end;
