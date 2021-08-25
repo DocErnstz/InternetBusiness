@@ -1,26 +1,41 @@
 @use "var";
-.form {
+#form {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var.$formRed;
-  @mixin textStyle($width, $align) {
-    width: $width;
-    text-align: $align;
-    margin-top: 400px;
-    h1 {
-      font-size: 3rem;
-      font-weight: bolder;
+  .form {
+    background-color: var.$formRed;
+    width: 100%;
+    @mixin textStyle($width, $align) {
+      margin: 0px auto;
+      margin-top: 500px;
+      max-width: $width;
+      text-align: $align;
+      @media screen and (max-width: 700px) {
+        margin: 0 50px;
+        margin-top: 500px;
+      }
+
+      h1 {
+        font-size: clamp(1rem, 7vw, 3rem);
+        font-weight: bolder;
+      }
+      p {
+        font-size: clamp(20px, 2vw, 2rem);
+        color: rgb(59, 51, 51);
+      }
     }
-    p {
-      color: rgb(112, 111, 111);
+    &_WWA {
+      @include textStyle(500px, center);
     }
-  }
-  &_WWA {
-    @include textStyle(500px, center);
-  }
-  &_KIT {
-    @include textStyle(800px, left);
+    &_KIT {
+      @include textStyle(800px, left);
+    }
+    form {
+      margin: 200px 0;
+      .form_ld {
+        background-color: blue;
+        width: 300px;
+        margin: 0 auto;
+      }
+    }
   }
 }

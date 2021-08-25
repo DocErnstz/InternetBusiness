@@ -3,12 +3,6 @@
 @import "messageBar.css";
 @import "slider.css";
 
-body {
-  font-family: "Noto Sans JP", sans-serif;
-  line-height: 1.6;
-  color: white;
-}
-
 * {
   margin: 0;
   padding: 0;
