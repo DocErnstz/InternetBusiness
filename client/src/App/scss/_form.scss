@@ -1,0 +1,26 @@
+@use "var";
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var.$formRed;
+  @mixin textStyle($width, $align) {
+    width: $width;
+    text-align: $align;
+    margin-top: 400px;
+    h1 {
+      font-size: 3rem;
+      font-weight: bolder;
+    }
+    p {
+      color: rgb(112, 111, 111);
+    }
+  }
+  &_WWA {
+    @include textStyle(500px, center);
+  }
+  &_KIT {
+    @include textStyle(800px, left);
+  }
+}
