@@ -115,9 +115,11 @@ const msg = document.getElementById("Message");
 messageForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const message = new DataMessage(name.value, email.value, msg.value);
+   name.value = "";
+  email.value= "";
+  msg.value = "";
   ui.addMessages(message);
-  ui.getMessages();
-  sendMail(message);
+  //sendMail(message);
 });
 
 const button_side = document.querySelector(".button_side");

@@ -49,6 +49,7 @@
           input:focus {
             outline: none;
           }
+          
           input:before {
             content: "";
             position: absolute;
@@ -76,6 +77,9 @@
           width: 100%;
           cursor: pointer;
         }
+        .btn:active{
+            background-color: brown;
+          }
       }
     }
   }

@@ -1,9 +1,11 @@
+//https://makoreact.herokuapp.com/messages
 export class UI {
   // Add a new Product
   getMessages() {
     fetch("https://makoreact.herokuapp.com/messages").then(async (response) => {
       const data = await response.json();
       const board = document.getElementById("Board");
+      board.innerHTML = '';
 
       data.forEach((item) => {
         const element = document.createElement("div");
@@ -36,6 +38,7 @@ export class UI {
     })
       .then(async (response) => {
         const message = await response.json();
+        this.getMessages();
       })
       .catch((error) => console.log(error));
   }

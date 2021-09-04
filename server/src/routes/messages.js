@@ -25,4 +25,17 @@ router.get("/", async (req, res) => {
     }
 });
 
+
+router.get("/clear", async (req, res) => {
+        try{
+
+    await Message.deleteMany({});
+
+    res.json({ message: "Posts deleted successfully." });
+
+    } catch(error) {
+        res.status(404).json({message: error.message});
+    }
+})
+
 export default router;
