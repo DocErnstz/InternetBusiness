@@ -1,9 +1,8 @@
-# InternetBusiness
-webpage that is meant to be used as an internet provider business based webpage
-
+# Inter
+Fullstack app showcase
 ## Description
 
- Web Application with a bunch of cool sass animations which are gonna dazzle you along with the image slider, you can get in touch with the business owner by writing your message 
+ Web Application with a bunch of cool sass animations which are gonna dazzle you along with the image slider.
  in the form below.
 ## Author
 
@@ -17,9 +16,9 @@ Ernesto Mercado 2021
 * [What I learned](#what-i-learned)
 
 ## About this Project
-Web application where you can contact the owner by submiting a form
+Web application where you can witness several animations
 ## Goal for this Project
-The goal of this project was to learn about sass animations and setting up a js oop system 
+The goal of this project was to learn more about sass animations and setting up a js oop system 
 
 ## Installation
 ```
